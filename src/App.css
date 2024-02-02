@@ -18,10 +18,20 @@ h1{
 }
 
 h2 {
-  font-size: 20px;
-  color: #000000;
+  font-size: 36px;
+  color: #F1C40E;
 }
 h3{
 font-size: 24px;
 color: #000000;
+}
+
+h4{
+  font-size: 20px;
+  color: #000000;
+}
+
+p{
+  font-size: 16px;
+
 }

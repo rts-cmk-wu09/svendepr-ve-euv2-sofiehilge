@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoadingComp from "../components/LoadingComp";
 
-const ActivityList = () => {
+const ActivityList = ({ activities }) => {
   const [activityList, setActivityList] = useState();
   console.log(activityList);
 
@@ -24,17 +24,21 @@ const ActivityList = () => {
     return <LoadingComp />;
   }
 
+  const allActivityList = activities || activityList;
+
   return (
     <>
-      {activityList.map((item) => (
-        <Link key={item.id} to={`classdetails/${item.id}`}>
+      {allActivityList.map((item) => (
+        <Link key={item.id} to={`/classdetails/${item.id}`}>
           <article
             className={"w-[128px] h-[144.87px]"}
             style={{
               backgroundImage: `url(${item.asset.url})`,
               backgroundSize: "cover",
             }}
-          ></article>
+          >
+            <p className="bg-white">{item.className}</p>
+          </article>
         </Link>
       ))}
       <p>activityList</p>
