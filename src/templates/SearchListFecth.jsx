@@ -79,3 +79,5 @@ const SearchListFetch = () => {
 };
 
 export default SearchListFetch;
+
+/* Should show list on first render */
