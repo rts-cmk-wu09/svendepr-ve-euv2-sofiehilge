@@ -1,0 +1,27 @@
+#root {
+  max-width: 375px;
+  font-family: 'Poppins', sans-serif;
+}
+body,
+figure,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  
+}
+h1{
+  font-size: 56px;
+  color: #F1C40E;
+}
+
+h2 {
+  font-size: 20px;
+  color: #000000;
+}
+h3{
+font-size: 24px;
+color: #000000;
+}

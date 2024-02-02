@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Home = () => {
     return ( <>
-    <p>Popular classes</p>
+    <h3>Popular classes</h3>
     <Link to="/classdetails"><p>Image</p>
     </Link>
     
