@@ -1,5 +1,15 @@
+import { Link } from "react-router-dom";
+import DetailsCard from "../templates/DetailsCard";
+
 const ClassDetails = () => {
-  return <h1>ClassDetails</h1>;
+  return (
+    <>
+      <DetailsCard/>
+      <Link to="/login">  <p>SIGN UP</p>
+      </Link>
+    
+    </>
+  );
 };
 
 export default ClassDetails;

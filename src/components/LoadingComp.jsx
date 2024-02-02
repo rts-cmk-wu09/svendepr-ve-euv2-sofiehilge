@@ -1,5 +1,5 @@
 const LoadingComp = () => {
-    return ( <p>LOADING</p> );
+    return ( <p>LOADINGCOMP</p> );
 }
  
 export default LoadingComp;
