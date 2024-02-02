@@ -39,6 +39,7 @@ const DetailsCard = () => {
             <p>
               {activityDetails.classDay} - {activityDetails.classTime}
             </p>
+            <p>{activityDetails.classDescription}</p>
             <h4>Trainer</h4>
             {/* Her skal træner billede ind hentes fra all trainers som filtrer og sammenligner træner id */}
             <p>{activityDetails.trainer.trainerName}</p>
