@@ -1,12 +1,12 @@
 import TrainerList from "../templates/TrainerList";
-import SearchList from "../templates/SearchList";
+import SearchListFetch from "../templates/SearchListFecth";
 
 const Search = () => {
     
   return (
     <>
       <h1>Search</h1>
-      <SearchList/>
+    <SearchListFetch/>
       <h4>Popular classes</h4>
       <TrainerList/>
       
