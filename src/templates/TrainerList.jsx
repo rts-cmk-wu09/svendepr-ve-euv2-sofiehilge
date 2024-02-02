@@ -1,24 +1,14 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import useGetData from "../hooks/useGetData";
 import LoadingComp from "../components/LoadingComp";
 
-const TrainerList = () => {
-  const [trainerList, setTrainerList] = useState();
-
-  /* ---- get all trainers----- */
-  useEffect(() => {
-    const getTrainerList = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-      },
-    };
-    fetch("http://localhost:4000/api/v1/trainers", getTrainerList)
-      .then((response) => response.json())
-      .then((response) => setTrainerList(response))
-      .catch((err) => console.error(err));
-  }, []);
+const TrainerList = ({ trainers }) => {
+  //Fetch data using custom hook
+  const { getData: trainerList, loading } = useGetData(
+    "http://localhost:4000/api/v1/trainers"
+  );
   /* check loading of trainerlist before maping over */
-  if (!trainerList || trainerList.length === 0) {
+  if (loading || !trainerList || trainerList.length === 0) {
     return <LoadingComp />;
   }
   return (
