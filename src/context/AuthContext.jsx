@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../api/axios";
+import axios from "axios";
 
 const AuthContext = createContext();
 
@@ -11,8 +11,9 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (data) => {
     try {
-      const response = await axios.post("/auth/token", {
-        userName: data.user,
+      console.log("attempting login with data:", data);
+      const response = await axios.post("http://localhost:4000/auth/token", {
+        username: data.user,
         password: data.password,
       });
       const { token, userId } = response.data;
@@ -58,9 +59,9 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => {
-    const context = useContext(AuthContext);
-    if(!context){
-        throw new Error("useAuth must be used within an AuthProvider");
-    }
-    return context;
-}
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};
