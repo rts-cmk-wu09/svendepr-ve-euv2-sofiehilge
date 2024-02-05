@@ -34,7 +34,7 @@ const Welcome = () => {
           color={"#FFF"}
           bgColor={"#FFF"}
           text={"Train like a pro"}
-          absoluteValue={{ left: "0", top: "290px" }}
+          absoluteValue={{ left: "0", top: "410px" }}
         />
 
         <div className="absolute top-[675px] ml-[99px]">
