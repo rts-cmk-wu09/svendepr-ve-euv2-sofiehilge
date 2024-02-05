@@ -5,11 +5,11 @@ import ScheduleCardNoLogin from "../templates/ScheduleCardNoLogin";
 import Navigation from "../templates/Navigation";
 
 const Schedule = () => {
-  const { userId} = useAuth();
+  const { token, userId} = useAuth();
   return (
     <>
     <Navigation text={"My Schedule"}/>
-      {userId ? <ScheduleCard userId={userId} /> : <ScheduleCardNoLogin />}
+      {token && userId ? <ScheduleCard userId={userId} /> : <ScheduleCardNoLogin />}
     </>
   );
 };

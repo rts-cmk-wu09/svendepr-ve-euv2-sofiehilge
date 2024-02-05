@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
-  return (
+    return (
     <>
       <Navigation />
       <Hero text={"Sorry something went wrong"} />
@@ -22,5 +22,5 @@ const ErrorPage = () => {
     </>
   );
 };
-
+ 
 export default ErrorPage;

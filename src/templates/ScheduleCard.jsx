@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import LoadingComp from "../components/LoadingComp";
 import ErrorComp from "../components/ErrorComp";
+import ScheduleCardNoLogin from "./ScheduleCardNoLogin";
 
 const ScheduleCard = () => {
   const { token, userId } = useAuth();
@@ -14,6 +15,11 @@ const ScheduleCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        //check if userId is available before making the API request
+        if (!userId){
+          setLoading(false);
+          return;
+        }
         //make a GET request with the accuired token
         const response = await axios.get(
           `http://localhost:4000/api/v1/users/${userId}`,
@@ -43,7 +49,7 @@ const ScheduleCard = () => {
   }
 
   if (error) {
-    return <ErrorComp message={error} />;
+    return <ScheduleCardNoLogin />;
   }
 
   return (
