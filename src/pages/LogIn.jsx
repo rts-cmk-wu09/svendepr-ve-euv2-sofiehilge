@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
 import Button from "../components/Button";
@@ -11,13 +12,16 @@ const LogIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [loginError, setLoginError] = useState(false);
 
   const onSubmit = async (data) => {
     try {
       await login(data);
     } catch (error) {
       console.error("Login failed:", error);
-      throw new Error("login failed");
+      if (error.message === "login failed") {
+        setLoginError(true);
+      }
     }
   };
 
@@ -52,8 +56,28 @@ const LogIn = () => {
             width="334px"
             className="mb-[15px]"
           />
-          {errors.user && <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">Please provide your email</p>}
-          {errors.password && <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">Please enter a password.</p>}
+          {/* Display error message for invalud login info */}
+          {errors.user && (
+            <p className="flex flex-col items-center text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+              Please provide your email
+            </p>
+          )}
+          {errors.password && (
+            <p className="flex flex-col items-center text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+              Please enter a password
+            </p>
+          )}
+          {/* display error message for failed login */}
+          {loginError && (
+            <div className="flex flex-col items-center">
+            <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+              Invalid login information
+            </p>
+            <p className="text-[18px] font-[600] leading-4 pb-[15px]">
+            Pleas try again
+          </p>
+            </div>
+          )}
         </form>
       </div>
     </div>

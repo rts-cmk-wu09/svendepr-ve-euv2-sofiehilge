@@ -21,6 +21,12 @@ tilføjelser til main projekt:
 - er det muligt at Error page checker for token og hvis der ikke er token, så vises link til login side.
 - hvis der er token vises home.siden
 
+skalering af projekt:
+- toggle sort/hvid
+- lave til web også
+
+
+
 
 forberedelse til mundtlig:
 - læs op på react og vite
