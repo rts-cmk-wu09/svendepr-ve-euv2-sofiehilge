@@ -1,4 +1,4 @@
-
+<!-- HUSK AT COMMITE TIL MAIN BRANCH TORSDAG kl 14!! -->
 //se på om det giver mening at lave et api dokument for genanvendelighed
 
 //overvej at rykke getData fetchet væk fra useGetData, da det bare volder sygt mange problemer!
@@ -27,3 +27,4 @@ forberedelse til mundtlig:
 - læs op på tegn som || && etc
 - i react hook form bruges {...register}
 - læs op på pakker som react-icons, react-burger-menu, react-hook hvad er de i forhold til react?
+
