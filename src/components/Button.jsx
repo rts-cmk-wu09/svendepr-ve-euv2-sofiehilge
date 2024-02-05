@@ -7,7 +7,7 @@ const Button = (props) => {
   return (
     <button
       style={buttonStyle}
-      className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] py-[15px]"
+      className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase text-[14px] font-semibold text-center px-[28px] py-[15px]"
     >
       {text}
     </button>
