@@ -25,14 +25,18 @@ const Welcome = () => {
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className="mt-[290px]">
-          <Hero text={"believe yourself"} />
-          <SecondaryHero
-            color={"#FFF"}
-            bgColor={"#FFF"}
-            text={"Train like a pro"}
-          />
-        </div>
+
+        <Hero
+          text={"believe yourself"}
+          absoluteValue={{ left: "0", top: "290px" }}
+        />
+        <SecondaryHero
+          color={"#FFF"}
+          bgColor={"#FFF"}
+          text={"Train like a pro"}
+          absoluteValue={{ left: "0", top: "290px" }}
+        />
+
         <div className="absolute top-[675px] ml-[99px]">
           <Link to="/home">
             <Button text={"start training"} width="178px" />
