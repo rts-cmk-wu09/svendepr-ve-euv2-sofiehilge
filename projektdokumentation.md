@@ -1,6 +1,8 @@
 <!-- HUSK AT COMMITE TIL MAIN BRANCH TORSDAG kl 14!! -->
 //se på om det giver mening at lave et api dokument for genanvendelighed
 
+//undersøg useLoaderData - jeg kan se at vi har brugt den i myMovie
+
 //overvej at rykke getData fetchet væk fra useGetData, da det bare volder sygt mange problemer!
 
 react-buger-menu
