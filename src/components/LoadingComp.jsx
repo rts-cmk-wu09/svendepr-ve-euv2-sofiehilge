@@ -1,5 +1,15 @@
+import { useLottie } from "lottie-react";
+import loading from "../assets/loading.json";
+
 const LoadingComp = () => {
-    return ( <p>LOADINGCOMP</p> );
-}
- 
+  const options = {
+    animationData: loading,
+    loop: true,
+  };
+
+  const { view } = useLottie(options);
+
+  return <>{view}</>;
+};
+
 export default LoadingComp;
