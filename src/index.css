@@ -49,3 +49,14 @@ h5 {
 p {
   font-size: 16px;
 }
+
+.inputBorder{
+  width: 335px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #D4D4D4;
+    color: #000;
+    background-color: #FBFBFB;
+    margin-bottom: 15px;
+    padding-left: 35px;
+}

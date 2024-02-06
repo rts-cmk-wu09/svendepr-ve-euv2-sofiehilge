@@ -5,6 +5,8 @@
 
 //overvej at rykke getData fetchet væk fra useGetData, da det bare volder sygt mange problemer!
 
+//kan jeg lave getData om til et axios fetch? og spare mere kode
+
 react-buger-menu
 -- husk: npm install react-burger-menu --save
 react-icons
@@ -26,6 +28,24 @@ tilføjelser til main projekt:
 skalering af projekt:
 - toggle sort/hvid
 - lave til web også
+- tilføje træner schedule side
+- opret bruger
+- vise gennemsnittet af brugernes ratings på hver class
+
+Dokumentationens overskrifter:
+ 
+Tech-stack:
+List teknologierne
+Teknisk Dokumentation:
+Forklar og begrund de enkelte teknologier i din tech-stack.
+Kode til særlig bedømmelse
+Indsæt kode til særlig bedømmelse
+Evt. tilføjelser og rettelser
+Beskriv hvad du eventuelt har tilføjet eller rettet og begrund dit valg
+Valgfri opgave
+Forklar hvilken en af de valgfrie opgaver du har valgt
+Reflektion
+Reflekter over og beskriv hvordan applikationen i sin nuværende form kan skaleres
 
 
 

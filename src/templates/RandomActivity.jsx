@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import useGetData from "../hooks/useGetData";
 import LoadingComp from "../components/LoadingComp";
 import ErrorComp from "../components/ErrorComp";
-import { FaStar } from "react-icons/fa";
 import useTextLimit from "../hooks/useTextLimit";
+import LikeStar from "../components/LikeStar";
 
 const RandomActivity = () => {
   //fetch data using custom hook
@@ -25,7 +25,7 @@ const RandomActivity = () => {
   const randomActivity = randomActivities[randomIndex];
 
   //use the useTextLimit hook outside of the Link component
-  const limitedText = useTextLimit(randomActivity.className, 16)
+  const limitedText = useTextLimit(randomActivity.className, 16);
   return (
     <>
       {error && <ErrorComp />}
@@ -33,7 +33,7 @@ const RandomActivity = () => {
       {randomActivities && (
         <Link to={`/classdetails/${randomActivity.id}`}>
           <article
-            className="w-[335px] h-[404px] mx-[20px] relative rounded-[16px]"
+            className="w-[335px] h-[404px]  relative rounded-[16px]"
             style={{
               backgroundImage: `url(${randomActivity.asset.url})`,
               backgroundSize: "cover",
@@ -42,12 +42,8 @@ const RandomActivity = () => {
             <p className="rounded-bl-[16px] rounded-tr-[48px] absolute bg-primaryColor w-[224px] h-[72px] bottom-0 left-0 font-poppins font-semibold pl-[16px] pt-[13px]">
               {limitedText}
             </p>
-            <span className="flex flex-row absolute bottom-0 left-0 pl-[16px] pb-[17px] pr-[8.43px]  ">
-              <FaStar className="mr-[8.43px]"/>
-              <FaStar className="mr-[8.43px]"/>
-              <FaStar className="mr-[8.43px]"/>
-              <FaStar className="mr-[8.43px]"/>
-              <FaStar className="mr-[8.43px]"/>
+            <span className="">
+              <LikeStar />
             </span>
           </article>
         </Link>
