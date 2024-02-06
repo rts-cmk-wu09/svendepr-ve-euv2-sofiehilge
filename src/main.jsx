@@ -26,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="/schedule" element={<Schedule />} />
       <Route path="/classdetails/:id" element={<ClassDetails />} />
       <Route path="/login" element={<LogIn />} />
+      <Route path="/error" element={<ErrorPage/>}/>
     </Route>
   )
 );

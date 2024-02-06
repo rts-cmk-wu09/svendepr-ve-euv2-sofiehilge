@@ -43,7 +43,7 @@ const LogIn = () => {
           <input
             {...register("user", { required: true })}
             placeholder="Enter your email..."
-            class="inputBorder"
+            className="inputBorder"
           />
           <input
             {...register("password", { required: true })}

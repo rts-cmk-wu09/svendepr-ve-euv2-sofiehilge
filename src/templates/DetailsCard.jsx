@@ -19,8 +19,14 @@ const DetailsCard = () => {
     };
     setLoading(true);
     fetch(`http://localhost:4000/api/v1/classes/${id}`, getActivityDetails)
-      .then((response) => response.json())
-      .then((response) => setActivityDetails(response))
+      .then((response) => {
+      
+        return response.json();
+      })
+      .then((response) => {
+        setActivityDetails(response);
+        
+      })
       .catch((err) => {
         console.error(err);
         setError(err);

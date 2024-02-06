@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+
 import DetailsCard from "../templates/DetailsCard";
+import SignUpButtonFetch from "../components/SignUpButtonFetch";
 
 const ClassDetails = () => {
+
   return (
     <>
-      <DetailsCard/>
-      <Link to="/login">  <p>SIGN UP</p>
-      </Link>
-    
+      <DetailsCard />
+      <SignUpButtonFetch/>
     </>
   );
 };
