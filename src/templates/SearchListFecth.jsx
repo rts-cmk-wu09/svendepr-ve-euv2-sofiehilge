@@ -1,19 +1,12 @@
 import { useState, useEffect } from "react";
 import ActivityListFetch from "./ActivityListFetch";
 import NoResults from "../components/NoResults";
+import useGetData from "../hooks/useGetData";
 
 const SearchListFetch = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [allClassList, setAllClassList] = useState([]);
+  const {getData: allClassList, loading, error} = useGetData("http://localhost:4000/api/v1/classes");
   const [filteredClasses, setFilteredClasses] = useState([]);
-
-  useEffect(() => {
-    //Fetch all activities on initial render
-    fetch("http://localhost:4000/api/v1/classes")
-      .then((response) => response.json())
-      .then((data) => setAllClassList(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
 
   useEffect(() => {
     //Filter activities based on the search query
