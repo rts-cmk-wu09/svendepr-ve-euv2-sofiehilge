@@ -1,9 +1,9 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import useGetData from "../hooks/useGetData";
 import LoadingComp from "../components/LoadingComp";
 import ErrorComp from "../components/ErrorComp";
 
-const TrainerList = ({ allClassList }) => {
+const TrainerList = ({ searchQuery }) => {
   //Fetch data using custom hook
   const {
     getData: trainerList,
@@ -13,16 +13,28 @@ const TrainerList = ({ allClassList }) => {
 
   const [filteredTrainers, setFilteredTrainers] = useState([]);
 
+
   useEffect(() => {
-    if(!trainerList || trainerList.length === 0) return;
+    console.log("Search Query:", searchQuery);
+    console.log("Trainer List:", trainerList);
+    if (!trainerList || trainerList.length === 0){
+      setFilteredTrainers([]);
+      return;
+    }
 
-    //extract trainer IDs from allClassList
-    const classTrainerIds = allClassList.map(item => item.trainer.id);
+    //if searchQuery is empty, render the full list of trainers
+    if (!searchQuery) {
+      setFilteredTrainers(trainerList);
+      return;
+    }
 
-    //filter trainerList based on classTrainerIds
-    const filtrered = trainerList.filter(trainer => classTrainerIds.includes(trainer.id));
-    setFilteredTrainers(filtrered)
-  }, [allClassList, trainerList]);
+    //filter trainerList based on searchquery
+    const filtered = trainerList.filter((trainer) =>
+      trainer.trainerName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    console.log("Filtered trainerS:", filtered)
+    setFilteredTrainers(filtered);
+  }, [trainerList, searchQuery]);
 
   /* check loading of trainerlist before maping over */
   if (loading || !trainerList || trainerList.length === 0) {
@@ -30,7 +42,7 @@ const TrainerList = ({ allClassList }) => {
   }
 
   if (error) {
-    return <ErrorComp message={error} />;
+    return <ErrorComp />;
   }
 
   return (
@@ -38,8 +50,14 @@ const TrainerList = ({ allClassList }) => {
       <h4 className="font-poppins font-bold mt-[48px]">Popular trainers</h4>
       {filteredTrainers.map((item) => (
         <div key={item.id} className="flex flex-row">
-          <img src={item.asset.url} alt={item.trainerName} className="w-[88px] h-[88px] object-cover rounded-2xl mt-[20px]"/>
-          <p className="font-poppins font-semibold mt-[34px] ml-[16px]" >{item.trainerName}</p>
+          <img
+            src={item.asset.url}
+            alt={item.trainerName}
+            className="w-[88px] h-[88px] object-cover rounded-2xl mt-[20px]"
+          />
+          <p className="font-poppins font-semibold mt-[34px] ml-[16px]">
+            {item.trainerName}
+          </p>
         </div>
       ))}
     </div>

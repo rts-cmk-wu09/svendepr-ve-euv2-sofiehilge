@@ -3,19 +3,20 @@ import ActivityListFetch from "./ActivityListFetch";
 import NoResults from "../components/NoResults";
 import useGetData from "../hooks/useGetData";
 
-const SearchListFetch = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+
+const SearchListFetch = ({searchQuery}) => {
   const {getData: allClassList, loading, error} = useGetData("http://localhost:4000/api/v1/classes");
   const [filteredClasses, setFilteredClasses] = useState([]);
 
   useEffect(() => {
     //Filter activities based on the search query
-    if (searchQuery.trim() === "") {
+    if (!allClassList || allClassList.length === 0 || !searchQuery) {
       //if the search query is empty, dont filter classes
       setFilteredClasses([]);
       return;
     }
 
+    //filter activities based on the search query
     const filtered = allClassList.filter(
       (item) =>
         (item.className &&
@@ -32,27 +33,11 @@ const SearchListFetch = () => {
             .toLowerCase()
             .includes(searchQuery.toLowerCase()))
     );
-    console.log("filtered classes:", filtered);
     setFilteredClasses(filtered);
   }, [searchQuery, allClassList]);
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
   return (
     <div className="ml-[20px]">
-      <form>
-        <div>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleSearch}
-            className="inputBorder"
-          />
-        </div>
-      </form>
       <h4 className="font-poppins font-bold mt-[32px] mb-[16px]">Popular classes</h4>
       {searchQuery.trim() === "" ? (
         <ActivityListFetch activities={allClassList} />
