@@ -1,15 +1,15 @@
 import TrainerList from "../templates/TrainerList";
 import SearchListFetch from "../templates/SearchListFecth";
+import Navigation from "../templates/Navigation";
 
 const Search = () => {
     
   return (
     <>
-      <h1>Search</h1>
+      <Navigation text={"Search"}/>
     <SearchListFetch/>
       <h4>Popular classes</h4>
       <TrainerList/>
-      
     </>
   );
 };

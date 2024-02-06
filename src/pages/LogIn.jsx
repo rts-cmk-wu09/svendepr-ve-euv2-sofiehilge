@@ -43,12 +43,12 @@ const LogIn = () => {
           <input
             {...register("user", { required: true })}
             placeholder="Enter your email..."
-            className="w-[335px] h-[50px] rounded-[25px] border border-solid border-[#D4D4D4] text-[#000] bg-[#FBFBFB] mb-[15px] pl-[35px]"
+            class="inputBorder"
           />
           <input
             {...register("password", { required: true })}
             placeholder="Enter your password..."
-            className="w-[335px] h-[50px] rounded-[25px] border border-solid border-[#D4D4D4] text-[#000] bg-[#FBFBFB] mb-[15px] pl-[35px]"
+            class="inputBorder"
           />
           <Button
             type="submit"

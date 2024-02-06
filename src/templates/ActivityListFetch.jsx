@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import useGetData from "../hooks/useGetData";
 import LoadingComp from "../components/LoadingComp";
-import ErrorComp from "../components/ErrorComp";
+import ErrorComp from "../components/ErrorComp"
 
 const ActivityListFetch = ({ activities }) => {
-  //fetch data using custom hook
-  const { getData: activityList, loading, error } = useGetData(
+   // Fetch data using custom hook
+   const { getData: activityList, loading, error } = useGetData(
     "http://localhost:4000/api/v1/classes"
   );
 
@@ -21,10 +21,6 @@ const ActivityListFetch = ({ activities }) => {
   const allActivityList = activities || activityList;
 
   return (
-    <>
-      {error && <ErrorComp />}
-      {loading && <LoadingComp />}
-      {allActivityList && (
         <>
           {allActivityList.map((item) => (
             <Link key={item.id} to={`/classdetails/${item.id}`}>
@@ -39,10 +35,7 @@ const ActivityListFetch = ({ activities }) => {
               </article>
             </Link>
           ))}
-          <p>activityList</p>
         </>
-      )}
-    </>
   );
 };
 
