@@ -24,16 +24,20 @@ const SearchListFetch = () => {
     }
 
     const filtered = allClassList.filter(
-     (item) =>
+      (item) =>
         (item.className &&
           item.className.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (item.classDescription &&
-          item.classDescription.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          item.classDescription
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase())) ||
         (item.classDay &&
           item.classDay.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (item.trainer &&
           item.trainer.trainerName &&
-          item.trainer.trainerName.toLowerCase().includes(searchQuery.toLowerCase()))
+          item.trainer.trainerName
+            .toLowerCase()
+            .includes(searchQuery.toLowerCase()))
     );
     console.log("filtered classes:", filtered);
     setFilteredClasses(filtered);
@@ -56,18 +60,16 @@ const SearchListFetch = () => {
           />
         </div>
       </form>
-      {(searchQuery.trim() === "" || allClassList.length>0) ? (
-        filteredClasses.length === 0 ? (
-          <ActivityListFetch activities={allClassList} />
-          ) : (
-            <ActivityListFetch activities={filteredClasses} />
-            )
-            ) : (
+      {searchQuery.trim() === "" ? (
+        <ActivityListFetch activities={allClassList} />
+      ) : filteredClasses.length === 0 ? (
+        //if searchQuery is not empty it check if filteredClasses has items, if filteredClasses it empty it renderes NoResults. If searchQuery is empty ActivityListFetch is rendered
         <NoResults />
+      ) : (
+        <ActivityListFetch activities={filteredClasses} />
       )}
     </>
   );
 };
 
 export default SearchListFetch;
-
