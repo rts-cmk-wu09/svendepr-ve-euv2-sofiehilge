@@ -3,8 +3,8 @@ import loading from "../assets/loading.json";
 import tw from "tailwind-styled-components";
 
 const StyledLottie = tw(Lottie)`
-w-full
-h-full
+w-[128px]
+h-[145px]
 `;
 
 const StyledDiv = tw.div`
