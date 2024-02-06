@@ -7,9 +7,8 @@ const Search = () => {
   return (
     <>
       <Navigation text={"Search"}/>
-    <SearchListFetch/>
-      <h4>Popular classes</h4>
-      <TrainerList/>
+    <SearchListFetch allClassList={allClassList}/>
+      <TrainerList allClassList={allClassList}/>
     </>
   );
 };

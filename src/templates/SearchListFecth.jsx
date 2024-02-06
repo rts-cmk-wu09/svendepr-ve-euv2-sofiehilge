@@ -41,8 +41,8 @@ const SearchListFetch = () => {
   };
 
   return (
-    <>
-      <form className="pl-[20px] mt-[31px]">
+    <div className="ml-[20px]">
+      <form>
         <div>
           <input
             type="text"
@@ -53,6 +53,7 @@ const SearchListFetch = () => {
           />
         </div>
       </form>
+      <h4 className="font-poppins font-bold mt-[32px] mb-[16px]">Popular classes</h4>
       {searchQuery.trim() === "" ? (
         <ActivityListFetch activities={allClassList} />
       ) : filteredClasses.length === 0 ? (
@@ -61,7 +62,7 @@ const SearchListFetch = () => {
       ) : (
         <ActivityListFetch activities={filteredClasses} />
       )}
-    </>
+    </div>
   );
 };
 
