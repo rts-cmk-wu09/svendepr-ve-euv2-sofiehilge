@@ -14,10 +14,13 @@ const useGetData = (apiEndpoint) => {
       .then((response) => response.json())
       .then((response) => {
         setGetData(response);
-        setLoading(false);
+      
       })
       .catch((err) => {
         console.error(err);
+     
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, [apiEndpoint]);

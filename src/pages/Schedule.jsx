@@ -1,10 +1,15 @@
+import ArrowBack from "../components/ArrowBack";
+import { useAuth } from "../context/AuthContext";
 import ScheduleCard from "../templates/ScheduleCard";
+import ScheduleCardNoLogin from "../templates/ScheduleCardNoLogin";
+import Navigation from "../templates/Navigation";
 
 const Schedule = () => {
+  const { token, userId} = useAuth();
   return (
     <>
-      <h1>My Schedule</h1>
-      <ScheduleCard />
+    <Navigation text={"My Schedule"}/>
+      {token && userId ? <ScheduleCard userId={userId} /> : <ScheduleCardNoLogin />}
     </>
   );
 };

@@ -1,46 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 #root {
-    max-width: 375px;
-    font-family: 'Poppins', sans-serif;
-  }
-  body,
-  figure,
-  p,
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-    padding: 0;
-    
-  }
-  h1{
-    font-size: 56px;
-    color: #F1C40E;
-  }
-  
-  h2 {
-    font-size: 36px;
-    color: #F1C40E;
-  }
-  h3{
+  max-width: 375px;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+figure,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 56px;
+  color: #f1c40e;
+  letter-spacing: -0.3em;
+}
+
+h2 {
+  font-size: 36px;
+  color: #f1c40e;
+}
+h3 {
   font-size: 24px;
   color: #000000;
-  }
-  
-  h4{
-    font-size: 20px;
-    color: #000000;
-  }
-  h5{
-    font-size: 20px;
-    color: white;
-  }
-  
-  p{
-    font-size: 16px;
-  
-  }
+}
+
+h4 {
+  font-size: 20px;
+  color: #000000;
+}
+h5 {
+  font-size: 20px;
+  color: white;
+}
+
+p {
+  font-size: 16px;
+}
+
+.inputBorder{
+  width: 335px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #D4D4D4;
+    color: #000;
+    background-color: #FBFBFB;
+    margin-bottom: 15px;
+    padding-left: 35px;
+}
