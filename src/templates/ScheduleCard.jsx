@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import LoadingComp from "../components/LoadingComp";
 import ErrorComp from "../components/ErrorComp";
 import ScheduleCardNoLogin from "./ScheduleCardNoLogin";
+import Button from "../components/Button";
 
 const ScheduleCard = () => {
   const { token, userId } = useAuth();
@@ -16,7 +17,7 @@ const ScheduleCard = () => {
     const fetchData = async () => {
       try {
         //check if userId is available before making the API request
-        if (!userId){
+        if (!userId) {
           setLoading(false);
           return;
         }
@@ -57,8 +58,14 @@ const ScheduleCard = () => {
       {classesList.length > 0 ? (
         classesList.map((item) => (
           <Link key={item.id} to={`/classdetails/${item.id}`}>
-            <article className={"w-[335px h-[100px] mx-[20px] mt-[23px] bg-[#FCFBFB border border-solid border-[#D4D4D4] rounded-[12px] opacity-100 flex flex-col justify-center"}>
-              <h4 className="px-[25px] pb-[20px] text-left leading-16 tracking-normal text-[#070707] opacity-100 font-poppins font-semibold">{item.className}</h4>
+            <article
+              className={
+                "w-[335px h-[100px] mx-[20px] mt-[23px] bg-[#FCFBFB border border-solid border-[#D4D4D4] rounded-[12px] opacity-100 flex flex-col justify-center"
+              }
+            >
+              <h4 className="px-[25px] pb-[20px] text-left leading-16 tracking-normal text-[#070707] opacity-100 font-poppins font-semibold">
+                {item.className}
+              </h4>
               <p className="px-[25px] text-left font-poppins font-medium leading-[17px] tracking-normal text-[#000]">
                 {item.classDay} - {item.classTime}
               </p>
@@ -67,9 +74,14 @@ const ScheduleCard = () => {
         ))
       ) : (
         //display message if no classes are available
-        <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
-          No classes available. Please sign up for classes
-        </p>
+        <div className="mx-[30px]">
+          <p className="text-[18px] font-[600] leading-4 pb-[50px] mt-[50px] text-center">
+            No classes available. Please sign up for classes
+          </p>
+          <Link>
+            <Button text={"Login"} width={"334px"}/>
+          </Link>
+        </div>
       )}
     </>
   );
