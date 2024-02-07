@@ -48,7 +48,7 @@ const LogIn = () => {
           <input
             {...register("password", { required: true })}
             placeholder="Enter your password..."
-            class="inputBorder"
+            className="inputBorder"
           />
           <Button
             type="submit"
@@ -70,12 +70,12 @@ const LogIn = () => {
           {/* display error message for failed login */}
           {loginError && (
             <div className="flex flex-col items-center">
-            <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
-              Invalid login information
-            </p>
-            <p className="text-[18px] font-[600] leading-4 pb-[15px]">
-            Pleas try again
-          </p>
+              <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+                Invalid login information
+              </p>
+              <p className="text-[18px] font-[600] leading-4 pb-[15px]">
+                Pleas try again
+              </p>
             </div>
           )}
         </form>

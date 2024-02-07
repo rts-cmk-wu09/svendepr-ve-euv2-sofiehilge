@@ -1,11 +1,12 @@
 <!-- HUSK AT COMMITE TIL MAIN BRANCH TORSDAG kl 14!! -->
-//se på om det giver mening at lave et api dokument for genanvendelighed
+//prøv at fjerne første fetch i classdetails og lav istedet for fetch til get single user, du kan sammenligne idFromUrl med dennes tilmeldte classes. PÅ den måde får du også classDay!!
+
+//udvid searchpage med en side for trainer, så når man trykker på en specifikt søgt trainer rygger man over på en side lig schedule som viser trænerens hold
+
+//search sørg for at Khaled kun visses en gang
 
 //undersøg useLoaderData - jeg kan se at vi har brugt den i myMovie
 
-//overvej at rykke getData fetchet væk fra useGetData, da det bare volder sygt mange problemer!
-
-//kan jeg lave getData om til et axios fetch? og spare mere kode
 
 react-buger-menu
 -- husk: npm install react-burger-menu --save
@@ -31,6 +32,7 @@ skalering af projekt:
 - tilføje træner schedule side
 - opret bruger
 - vise gennemsnittet af brugernes ratings på hver class
+- tilføj en side fra search siden, så når man søger på en specifik træner kan man klikke sig ind på træneren og få et overblik over den specifikke træners hold.
 
 Dokumentationens overskrifter:
  

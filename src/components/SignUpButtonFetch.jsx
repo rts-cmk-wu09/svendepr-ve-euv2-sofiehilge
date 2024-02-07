@@ -112,7 +112,11 @@ const SignUpButtonFetch = () => {
       onClick={handleEnrollmentToggle}
       className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] py-[15px w-[334px]"
     >
-      {userId && !isEnrolled ? "Login for sign up" : "Cancel enrollment"}
+      {!userId
+        ? "Login for sign up"
+        : isEnrolled
+        ? "Cancel enrollment"
+        : "Sign up"}
     </button>
   );
 };
