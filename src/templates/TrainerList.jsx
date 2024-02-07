@@ -44,11 +44,11 @@ const TrainerList = ({ searchQuery }) => {
     return <ErrorComp />;
   }
 
-  //determine which list to display based on search query
+  // Determine which list to display based on search query
   const displayList =
-    searchQuery.trim() == "" || filteredTrainers.length === 0
-      ? trainerList
-      : filteredTrainers;
+  searchQuery.trim() === "" || filteredTrainers.length === 0
+    ? trainerList.slice(0, 4) // Show only the first four trainers
+    : filteredTrainers;
 
   return (
     <div className="ml-[21px]">

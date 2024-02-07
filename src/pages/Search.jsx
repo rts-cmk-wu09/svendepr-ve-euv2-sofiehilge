@@ -12,20 +12,7 @@ const Search = () => {
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
-  // // Fetch class list data using custom hook
-  // const {
-  //   getData: allClassList,
-  //   loading,
-  //   error,
-  // } = useGetData("http://localhost:4000/api/v1/classes");
 
-  // if (loading) {
-  //   return <LoadingComp />;
-  // }
-
-  // if (error) {
-  //   return <ErrorComp />;
-  // }
   return (
     <>
       <Navigation text={"Search"} />
