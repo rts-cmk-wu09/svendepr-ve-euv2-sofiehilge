@@ -67,8 +67,8 @@ const DetailsCard = () => {
         <section key={activityDetails.id}>
           <div className="relative">
             <div className="absolute">
-              <Link to="/home">
-                <ArrowBack style={{color: "white", position:"absolute", zIndex:10}}/>
+              <Link to="/home" className="absolute top-8 left-8">
+                <IoIosArrowRoundBack className="text-white text-2xl absolute"/>
               </Link>
               <BurgerMenu />
             </div>
@@ -80,7 +80,7 @@ const DetailsCard = () => {
               />
             </div>
             <div className="px-[12px]">
-              <h2 className="absolute font-poppins font-bold top-[244px] text-shadow-xs pb-[32px] mb-[32px]">
+              <h2 className="absolute font-poppins font-bold top-[244px] text-shadow-xs mb-[32px] w-[188px]" style={{ wordWrap: 'break-word' }}>
                 {activityDetails.className}
               </h2>
               <LikeStarRate />

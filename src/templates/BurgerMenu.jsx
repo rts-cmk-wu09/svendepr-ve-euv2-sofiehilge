@@ -9,7 +9,7 @@ const BurgerMenu = () => {
 
   useEffect(() => {
     //log whether the usre is logged in or logged out
-    if (token && userId){
+    if (token && userId) {
       console.log("User is logged in");
     } else {
       console.log("User is logged out");
@@ -36,10 +36,11 @@ const BurgerMenu = () => {
       <Link to="/search" onClick={toggleClick}>
         Search
       </Link>
-      <Link to="/schedule" onClick={toggleClick}>
-        My Schedule
-      </Link>
-
+      {userId && (
+        <Link to="/schedule" onClick={toggleClick}>
+          My Schedule
+        </Link>
+      )}
       {userId ? (
         <button onClick={logout}>Log out</button>
       ) : (

@@ -101,10 +101,8 @@ Sidebar wrapper styles
 /* General sidebar styles */
 .bm-menu {
   background: white;
-  /*   padding: 2.5em 1.5em 0; */
   font-size: 1.15em;
   right: 0;
-
   width: 100%;
 }
 
@@ -124,21 +122,20 @@ Sidebar wrapper styles
 /* Wrapper for item list */
 .bm-item-list {
   color: black;
-  /*  padding: 0.8em; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 172px;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
-  padding-top: 84px;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   line-height: 24px;
+  padding-top: 48px;
 }
 
 /* Styling of overlay */

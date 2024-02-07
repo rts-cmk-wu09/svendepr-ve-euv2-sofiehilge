@@ -110,7 +110,7 @@ const SignUpButtonFetch = () => {
   return (
     <button
       onClick={handleEnrollmentToggle}
-      className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] py-[15px] mt-[40px] w-[334px]"
+      className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] my-[20px] w-[334px]"
     >
       {!userId
         ? "Login for sign up"
