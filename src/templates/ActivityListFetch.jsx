@@ -15,7 +15,7 @@ const ActivityListFetch = ({ activities }) => {
 
   /* Loading statement */
   if (loading) {
-    return <LoadingComp />;
+    return <LoadingComp/>;
   }
 
   if (error) {

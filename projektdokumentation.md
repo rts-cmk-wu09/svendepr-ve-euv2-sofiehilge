@@ -1,11 +1,11 @@
 <!-- HUSK AT COMMITE TIL MAIN BRANCH TORSDAG kl 14!! -->
-//se på om det giver mening at lave et api dokument for genanvendelighed
+//prøv at fjerne første fetch i classdetails og lav istedet for fetch til get single user, du kan sammenligne idFromUrl med dennes tilmeldte classes. PÅ den måde får du også classDay!!
+
+// vis ikke sign up button hvis bruger ikke er logget ind
+//vis ikke schedule hvis bruger ikke er logget ind
 
 //undersøg useLoaderData - jeg kan se at vi har brugt den i myMovie
 
-//overvej at rykke getData fetchet væk fra useGetData, da det bare volder sygt mange problemer!
-
-//kan jeg lave getData om til et axios fetch? og spare mere kode
 
 react-buger-menu
 -- husk: npm install react-burger-menu --save
@@ -31,6 +31,7 @@ skalering af projekt:
 - tilføje træner schedule side
 - opret bruger
 - vise gennemsnittet af brugernes ratings på hver class
+- tilføj en side fra search siden, så når man søger på en specifik træner kan man klikke sig ind på træneren og få et overblik over den specifikke træners hold.
 
 Dokumentationens overskrifter:
  
@@ -55,4 +56,5 @@ forberedelse til mundtlig:
 - læs op på tegn som || && etc
 - i react hook form bruges {...register}
 - læs op på pakker som react-icons, react-burger-menu, react-hook hvad er de i forhold til react?
-
+- hvordan gemmer man login info på en sikker måde?
+- hvorfor localstorage er for risikabelt at bruge til login info?
