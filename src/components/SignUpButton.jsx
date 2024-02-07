@@ -117,7 +117,7 @@ const SignUpButton = () => {
     <>
       {!userId ? (
         <Link to="/login">
-          <button className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] py-[15px w-[334px]">
+          <button className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] w-[334px]">
             Log in to sign up
           </button>
         </Link>

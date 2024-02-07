@@ -1,13 +1,13 @@
-
 import DetailsCard from "../templates/DetailsCard";
 import SignUpButtonFetch from "../components/SignUpButtonFetch";
 
 const ClassDetails = () => {
-
   return (
     <>
       <DetailsCard />
-      <SignUpButtonFetch/>
+      <div className="px-[20px]">
+        <SignUpButtonFetch />
+      </div>
     </>
   );
 };

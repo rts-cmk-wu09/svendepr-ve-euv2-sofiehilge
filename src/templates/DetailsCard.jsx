@@ -7,36 +7,56 @@ import LikeStarRate from "../components/LikeStarRate";
 const DetailsCard = () => {
   const { id } = useParams();
   const [activityDetails, setActivityDetails] = useState();
+  const [trainers, setTrainers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   /* ----- get activity details---- */
   useEffect(() => {
-    const getActivityDetails = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-      },
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const activityResponse = await fetch(
+          `http://localhost:4000/api/v1/classes/${id}`
+        );
+        if (!activityResponse.ok) {
+          throw new Error("Failed to fetch activity details");
+        }
+        const activityData = await activityResponse.json();
+        setActivityDetails(activityData);
+        //fetch trainers
+
+        const trainersResponse = await fetch(
+          "http://localhost:4000/api/v1/trainers"
+        );
+        if (!trainersResponse.ok) {
+          throw new Error("Failed to fetch trainers");
+        }
+
+        const trainersData = await trainersResponse.json();
+
+        //filter trainers data to find the matching trainer
+        const matchingTrainer = trainersData.find(
+          (trainer) => trainer.id === activityData.trainerId
+        );
+        if (!matchingTrainer) {
+          throw new Error("Matching trainer not found");
+        }
+
+        setTrainers([matchingTrainer]);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
     };
-    setLoading(true);
-    fetch(`http://localhost:4000/api/v1/classes/${id}`, getActivityDetails)
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setActivityDetails(response);
-      })
-      .catch((err) => {
-        console.error(err);
-        setError(err);
-      })
-      .finally(() => setLoading(false));
+    fetchData();
   }, [id]);
 
   return (
-    <section className="w-[375px] h-[812px]">
+    <section className="w-[375px]">
       {error && <ErrorComp />}
-      {loading && <LoadingComp />}
+      {loading && <LoadingComp className="absolute top-0 left-0 w-[375px] h-[432px] flex justify-center items-center" />}
       {activityDetails && (
         <section key={activityDetails.id}>
           <div className="relative">
@@ -54,14 +74,23 @@ const DetailsCard = () => {
               <LikeStarRate />
             </div>
           </div>
-
-          <p>
-            {activityDetails.classDay} - {activityDetails.classTime}
-          </p>
-          <p>{activityDetails.classDescription}</p>
-          <h4>Trainer</h4>
-          {/* Her skal træner billede ind hentes fra all trainers som filtrer og sammenligner træner id */}
-          <p>{activityDetails.trainer.trainerName}</p>
+          <div className="ml-[20px]">
+            <p className="font-poppins font-medium mt-[16px]">
+              {activityDetails.classDay} - {activityDetails.classTime}
+            </p>
+            <p className="font-poppins font-medium mt-[16px]">
+              {activityDetails.classDescription}
+            </p>
+            <h4 className="font-poppins font-bold mt-[34px]">Trainer</h4>
+            {trainers.map((trainer) => (
+              <div key={trainer.id} className="flex flex-row mb-[20px]">
+                <div className="w-[88px] h-[88px]  mt-[20px]">
+                  <img src={trainer.asset.url} className="object-cover rounded-2xl" alt="trainer profil" />
+                </div>
+                <p className="font-poppins font-semibold mt-[34px] ml-[16px]">{trainer.trainerName}</p>
+              </div>
+            ))}
+          </div>
         </section>
       )}
     </section>
