@@ -80,7 +80,7 @@ const DetailsCard = () => {
               />
             </div>
             <div className="px-[12px]">
-              <h2 className="absolute font-poppins font-bold top-[244px] text-shadow-xs pb-[32px] mb-[32px]">
+              <h2 className="absolute font-poppins font-bold top-[244px] text-shadow-xs mb-[32px] w-[188px]" style={{ wordWrap: 'break-word' }}>
                 {activityDetails.className}
               </h2>
               <LikeStarRate />
