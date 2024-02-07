@@ -13,6 +13,7 @@ const ScheduleCard = () => {
   const [error, setError] = useState(null);
   const [classesList, setClassesList] = useState([]);
 
+  const buttonText = userId ? "View classes" : "Log in";
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -78,9 +79,15 @@ const ScheduleCard = () => {
           <p className="text-[18px] font-[600] leading-4 pb-[50px] mt-[50px] text-center">
             No classes available. Please sign up for classes
           </p>
-          <Link>
-            <Button text={"Login"} width={"334px"}/>
+          {userId ? (
+          <Link to={"/home"}>
+            <Button text={buttonText} width={"334px"} />
           </Link>
+        ) : (
+          <Link to={"/login"}>
+            <Button text={buttonText} width={"334px"} />
+          </Link>
+        )}
         </div>
       )}
     </>

@@ -1,10 +1,20 @@
 import { bubble as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
-import { useState} from "react";
-
+import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const BurgerMenu = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const { userId, token, logout } = useAuth();
+
+  useEffect(() => {
+    //log whether the usre is logged in or logged out
+    if (token && userId){
+      console.log("User is logged in");
+    } else {
+      console.log("User is logged out");
+    }
+  }, [token, userId]);
 
   const handleStateChange = (state) => {
     setIsClicked(state.isOpen);
@@ -19,11 +29,7 @@ const BurgerMenu = () => {
   };
 
   return (
-    <Menu
-      width={"100%"}
-      isOpen={isClicked}
-      onStateChange={handleStateChange}
-    >
+    <Menu width={"100%"} isOpen={isClicked} onStateChange={handleStateChange}>
       <Link to="/home" onClick={toggleClick}>
         Home
       </Link>
@@ -33,9 +39,14 @@ const BurgerMenu = () => {
       <Link to="/schedule" onClick={toggleClick}>
         My Schedule
       </Link>
-      <Link to="/login" onClick={toggleClick}>
-        Log in
-      </Link>
+
+      {userId ? (
+        <button onClick={logout}>Log out</button>
+      ) : (
+        <Link to="/login" onClick={toggleClick}>
+          Log in
+        </Link>
+      )}
     </Menu>
   );
 };

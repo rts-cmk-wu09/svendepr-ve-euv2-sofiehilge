@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoadingComp from "../components/LoadingComp";
 import ErrorComp from "../components/ErrorComp";
 import LikeStarRate from "../components/LikeStarRate";
+import BurgerMenu from "../templates/BurgerMenu";
+import ArrowBack from "../components/ArrowBack";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const DetailsCard = () => {
   const { id } = useParams();
@@ -56,10 +60,18 @@ const DetailsCard = () => {
   return (
     <section className="w-[375px]">
       {error && <ErrorComp />}
-      {loading && <LoadingComp className="absolute top-0 left-0 w-[375px] h-[432px] flex justify-center items-center" />}
+      {loading && (
+        <LoadingComp className="absolute top-0 left-0 w-[375px] h-[432px] flex justify-center items-center" />
+      )}
       {activityDetails && (
         <section key={activityDetails.id}>
           <div className="relative">
+            <div className="absolute">
+              <Link to="/home">
+                <ArrowBack style={{color: "white", position:"absolute", zIndex:10}}/>
+              </Link>
+              <BurgerMenu />
+            </div>
             <div className="relative top-197 left-0 w-375 h-235 bg-gradient-to-b from-white to-gray-700 bg-blend-multiply opacity-100">
               <img
                 src={activityDetails.asset.url}
@@ -85,9 +97,15 @@ const DetailsCard = () => {
             {trainers.map((trainer) => (
               <div key={trainer.id} className="flex flex-row mb-[20px]">
                 <div className="w-[88px] h-[88px]  mt-[20px]">
-                  <img src={trainer.asset.url} className="object-cover rounded-2xl" alt="trainer profil" />
+                  <img
+                    src={trainer.asset.url}
+                    className="object-cover rounded-2xl"
+                    alt="trainer profil"
+                  />
                 </div>
-                <p className="font-poppins font-semibold mt-[34px] ml-[16px]">{trainer.trainerName}</p>
+                <p className="font-poppins font-semibold mt-[34px] ml-[16px]">
+                  {trainer.trainerName}
+                </p>
               </div>
             ))}
           </div>
