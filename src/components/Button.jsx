@@ -13,7 +13,7 @@ const Button = (props) => {
 setClicked(true);
 setTimeout(() => {
   setClicked(false);
-}, 2000);
+}, 5000);
 
   }
   return (

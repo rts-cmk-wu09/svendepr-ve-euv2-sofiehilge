@@ -57,4 +57,5 @@ forberedelse til mundtlig:
 - læs op på tegn som || && etc
 - i react hook form bruges {...register}
 - læs op på pakker som react-icons, react-burger-menu, react-hook hvad er de i forhold til react?
-
+- hvordan gemmer man login info på en sikker måde?
+- hvorfor localstorage er for risikabelt at bruge til login info?

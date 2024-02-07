@@ -50,13 +50,103 @@ p {
   font-size: 16px;
 }
 
-.inputBorder{
+.inputBorder {
   width: 335px;
-    height: 50px;
-    border-radius: 25px;
-    border: 1px solid #D4D4D4;
-    color: #000;
-    background-color: #FBFBFB;
-    margin-bottom: 15px;
-    padding-left: 35px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #d4d4d4;
+  color: #000;
+  background-color: #fbfbfb;
+  margin-bottom: 15px;
+  padding-left: 35px;
+}
+
+/* Burgermenu */
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 21px;
+  height: 15px;
+  right: 42px;
+  top: 58px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #898989 padding-box;
+  height: 3px;
+  border-radius: 25px;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 16px;
+  width: 16px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #898989;
+}
+
+/*
+Sidebar wrapper styles
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  /*   padding: 2.5em 1.5em 0; */
+  font-size: 1.15em;
+  right: 0;
+
+  width: 100%;
+}
+
+/* Full width */
+.bm-menu.bm-menu-open .bm-menu-wrap {
+  width: 100%;
+}
+
+.bm-menu.bm-menu-open .bm-overlay {
+  max-width: 100%;
+}
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #f1c40e;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: black;
+  /*  padding: 0.8em; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  padding-top: 84px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
 }

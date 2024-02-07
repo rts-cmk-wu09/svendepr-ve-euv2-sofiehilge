@@ -3,8 +3,13 @@ import Hero from "../components/Hero";
 import SecondaryHero from "../components/SecondaryHero";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import {useAuth} from "../context/AuthContext";
+import {useState, useEffect} from "react";
 
 const ScheduleCardNoLogin = () => {
+  const [isClicked, setIsClicked] = useState(false);
+  const {userId, logout} = useAuth();
+  
   return (
     <div className="ml-[24px]">
       <Hero text={"Please login"} />
@@ -13,7 +18,7 @@ const ScheduleCardNoLogin = () => {
         color={"#000"}
         bgColor={"#000"}
       />
-      <div className="px-[20px] pt-[40px]">
+      <div className="pt-[40px]">
         <Link to={"/login"}>
           <Button text={"login"} width={"334px"} />
         </Link>

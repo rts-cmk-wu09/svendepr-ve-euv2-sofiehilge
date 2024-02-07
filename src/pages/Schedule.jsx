@@ -1,4 +1,4 @@
-import ArrowBack from "../components/ArrowBack";
+
 import { useAuth } from "../context/AuthContext";
 import ScheduleCard from "../templates/ScheduleCard";
 import ScheduleCardNoLogin from "../templates/ScheduleCardNoLogin";

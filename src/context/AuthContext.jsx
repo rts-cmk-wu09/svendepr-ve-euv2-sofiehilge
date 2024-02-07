@@ -11,7 +11,6 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (data) => {
     try {
-      console.log("attempting login with data:", data);
       const response = await axios.post("http://localhost:4000/auth/token", {
         username: data.user,
         password: data.password,
@@ -19,10 +18,6 @@ export const AuthProvider = ({ children }) => {
       const { token, userId } = response.data;
       setToken(token);
       setUserId(userId);
-
-      //save token and userId to localstorage
-      localStorage.setItem("token", token);
-      localStorage.setItem("userId", userId);
 
       navigate("/schedule");
     } catch (error) {
@@ -32,24 +27,17 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    //clear localstorage
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
+    // Log a message to indicate that logout function is being called
+    console.log("Logging out...");
+
     //clear token and userId from state
     setToken(null);
     setUserId(null);
+
+    navigate("/home"); //Redirect to home page after logout
   };
 
-  useEffect(() => {
-    //check for existing token and userId in localStorage during component mount
-    const storedToken = localStorage.getItem("token");
-    const storedUserId = localStorage.getItem("userId");
-
-    if (storedToken && storedUserId) {
-      setToken(storedToken);
-      setUserId(storedUserId);
-    }
-  }, []);
+  
 
   return (
     <AuthContext.Provider value={{ token, userId, login, logout }}>
