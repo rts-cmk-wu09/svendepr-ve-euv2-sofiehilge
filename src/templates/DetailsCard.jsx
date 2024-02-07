@@ -67,8 +67,8 @@ const DetailsCard = () => {
         <section key={activityDetails.id}>
           <div className="relative">
             <div className="absolute">
-              <Link to="/home">
-                <ArrowBack style={{color: "white", position:"absolute", zIndex:10}}/>
+              <Link to="/home" className="absolute top-8 left-8">
+                <IoIosArrowRoundBack className="text-white text-2xl absolute"/>
               </Link>
               <BurgerMenu />
             </div>

@@ -1,9 +1,8 @@
 <!-- HUSK AT COMMITE TIL MAIN BRANCH TORSDAG kl 14!! -->
 //prøv at fjerne første fetch i classdetails og lav istedet for fetch til get single user, du kan sammenligne idFromUrl med dennes tilmeldte classes. PÅ den måde får du også classDay!!
 
-//udvid searchpage med en side for trainer, så når man trykker på en specifikt søgt trainer rygger man over på en side lig schedule som viser trænerens hold
-
-//search sørg for at Khaled kun visses en gang
+// vis ikke sign up button hvis bruger ikke er logget ind
+//vis ikke schedule hvis bruger ikke er logget ind
 
 //undersøg useLoaderData - jeg kan se at vi har brugt den i myMovie
 
