@@ -1,5 +1,5 @@
 const Hero = (props) => {
-  const { text, absoluteValue } = props;
+  const { text, absoluteValue, size } = props;
 
   const heroStyle = {
     position: absoluteValue ? "absolute": "relative",

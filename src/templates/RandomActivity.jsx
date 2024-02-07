@@ -42,7 +42,7 @@ const RandomActivity = () => {
             <p className="rounded-bl-[16px] rounded-tr-[48px] absolute bg-primaryColor w-[224px] h-[72px] bottom-0 left-0 font-poppins font-semibold pl-[16px] pt-[13px]">
               {limitedText}
             </p>
-            <span className="">
+            <span>
               <LikeStar />
             </span>
           </article>
