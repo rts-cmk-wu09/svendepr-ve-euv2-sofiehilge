@@ -39,7 +39,7 @@ Tailwind tilbyder en bred vifte af predefinerede classes, endvidere gør inline 
 Et andet alternativ er styledcomponents, denne muliggøre dog ikke inlinestyling, hvorfor tailwind er valgt til dette projekt.
 
 ---------------KODE TIL SÆRLIG BEDØMMELSE-----------------
-Jeg har valgt min login side til særlig bedømmelse, da den bruger hooken useForm fra React-hook form, som inkludere flere metoder og properties til at opdatere state og validering. Derudover henter jeg login info om brugeren ved brug af useContext som er en custom-hook. 
+Jeg har valgt min React-funktionelle komponent "LogIn" til særlig bedømmelse, som håndterer login-processen. Dette login-komponenet indeholder en formular til indtastning af brugernavn og adgangskode. Når formularen sendes, kaldes "onSubmit"- funtionen, som forsøger at logge brugeren ind ved hjælp af "login"-funktionen fra "AuthContext". Hvis der opstår en fejl under login-processen, visses en fejlmeddelelse. Komponenten bruger også "useForm"-hook fra "react-hook-form" til at håndtere formularstyring og validering, samt "useState"-hook til at holde styr på login-fejltilstanden.
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
