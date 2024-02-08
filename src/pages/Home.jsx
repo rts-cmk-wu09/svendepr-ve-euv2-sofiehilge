@@ -17,7 +17,9 @@ const Home = () => {
         <h4 className="font-poppins font-bold mt-[48px] mb-[16px]">
           Classes for you
         </h4>
-        <ActivityListFetch />
+        <div className="mb-[66px]">
+          <ActivityListFetch />
+        </div>
       </div>
     </div>
   );
