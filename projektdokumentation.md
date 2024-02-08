@@ -9,7 +9,7 @@ React-Router
 Axios
 React-hook-form
 React-icons
-Tailwindcss
+TailwindCss
 
 ---------------TEKNISK DOKUMENTATION-----------------
 
@@ -39,6 +39,8 @@ Tailwind tilbyder en bred vifte af predefinerede classes, endvidere gør inline 
 Et andet alternativ er styledcomponents, denne muliggøre dog ikke inlinestyling, hvorfor tailwind er valgt til dette projekt.
 
 ---------------KODE TIL SÆRLIG BEDØMMELSE-----------------
+Jeg har valgt min login side til særlig bedømmelse, da den bruger hooken useForm fra React-hook form, som inkludere flere metoder og properties til at opdatere state og validering. Derudover henter jeg login info om brugeren ved brug af useContext som er en custom-hook. 
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";

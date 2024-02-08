@@ -61,7 +61,7 @@ const ScheduleCard = () => {
           <Link key={item.id} to={`/classdetails/${item.id}`}>
             <article
               className={
-                "w-[335px] h-[100px] mx-[20px] bg-[#FCFBFB] border border-solid border-[#D4D4D4] rounded-[12px] opacity-100 flex flex-col justify-center"
+                "w-[335px] h-[100px] mx-[20px] mb-5 bg-[#FCFBFB] border border-solid border-[#D4D4D4] rounded-[12px] opacity-100 flex flex-col justify-center"
               }
             >
               <h4 className="px-[25px] pb-[20px] text-left leading-16 tracking-normal text-[#070707] opacity-100 font-poppins font-semibold">
