@@ -49,35 +49,35 @@ const LogIn = () => {
             {...register("password", { required: true })}
             placeholder="Enter your password..."
             className="inputBorder"
-          />
+            />
+            {/* Display error message for invalud login info */}
+            {errors.user && (
+              <p className="flex flex-col items-center text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+                Please provide your email
+              </p>
+            )}
+            {errors.password && (
+              <p className="flex flex-col items-center text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+                Please enter a password
+              </p>
+            )}
+            {/* display error message for failed login */}
+            {loginError && (
+              <div className="flex flex-col items-center">
+                <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
+                  Invalid login information
+                </p>
+                <p className="text-[18px] font-[600] leading-4 pb-[15px]">
+                  Please try again
+                </p>
+              </div>
+            )}
           <Button
             type="submit"
             text="log in"
             width="334px"
-            className="mb-[15px]"
+            className="mb-[15px] mt-[5px]"
           />
-          {/* Display error message for invalud login info */}
-          {errors.user && (
-            <p className="flex flex-col items-center text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
-              Please provide your email
-            </p>
-          )}
-          {errors.password && (
-            <p className="flex flex-col items-center text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
-              Please enter a password
-            </p>
-          )}
-          {/* display error message for failed login */}
-          {loginError && (
-            <div className="flex flex-col items-center">
-              <p className="text-[18px] font-[600] leading-4 pb-[15px] mt-[15px]">
-                Invalid login information
-              </p>
-              <p className="text-[18px] font-[600] leading-4 pb-[15px]">
-                Pleas try again
-              </p>
-            </div>
-          )}
         </form>
       </div>
     </div>
