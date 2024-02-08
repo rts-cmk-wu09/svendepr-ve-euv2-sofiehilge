@@ -13,7 +13,6 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-
 }
 figure,
 p,
@@ -25,7 +24,7 @@ h3 {
 }
 h1 {
   font-size: 56px;
-  color: red;
+  color: #f1c40e;
   letter-spacing: -0.3em;
 }
 

@@ -5,7 +5,7 @@ const ClassDetails = () => {
   return (
     <>
       <DetailsCard />
-      <div className="px-[20px]">
+      <div className="px-[20px] py-[20px]">
         <SignUpButtonFetch />
       </div>
     </>

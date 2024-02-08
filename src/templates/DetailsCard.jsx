@@ -61,12 +61,12 @@ const DetailsCard = () => {
     <section className="w-[375px]">
       {error && <ErrorComp />}
       {loading && (
-        <LoadingComp className="absolute top-0 left-0 w-[375px] h-[432px] flex justify-center items-center" />
+        <LoadingComp className="absolute bottom-0 left-0 w-[375px] h-[432px] flex justify-center items-center" />
       )}
       {activityDetails && (
         <section key={activityDetails.id}>
           <div className="relative">
-            <div className="absolute">
+            <div className="absolute z-40">
               <Link to={"/home"}>
                 <div className="absolute text-white text-xl top-[58px] pl-[21px] font-poppins font-bold">
                   Back
@@ -79,7 +79,9 @@ const DetailsCard = () => {
                 src={activityDetails.asset.url}
                 alt={activityDetails.className}
                 className="w-[375px] h-[432px] object-cover overflow-hidden"
+             
               />
+              <div className="absolute inset-0 bg-black opacity-20"></div>
             </div>
             <div className="mx-[20px]">
               <h2
@@ -95,7 +97,7 @@ const DetailsCard = () => {
             <p className="font-poppins font-medium mt-[16px]">
               {activityDetails.classDay} - {activityDetails.classTime}
             </p>
-            <p className="font-poppins font-medium mt-[16px]">
+            <p className="font-poppins line-height-0 font-medium mt-[16px]">
               {activityDetails.classDescription}
             </p>
             <h4 className="font-poppins font-bold mt-[34px]">Trainer</h4>

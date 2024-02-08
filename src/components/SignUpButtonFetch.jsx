@@ -11,6 +11,7 @@ const SignUpButtonFetch = () => {
   const [error, setError] = useState(null);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [activityId, setActivityId] = useState(null);
+  const [clicked, setClicked] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -107,10 +108,15 @@ const SignUpButtonFetch = () => {
     return <ErrorComp />;
   }
 
+  //inline style for the button
+  const buttonStyle = {
+    border: clicked ? "2px solid black" : "none",
+  };
   return (
     <button
       onClick={handleEnrollmentToggle}
       className="bg-primaryColor h-[50px] rounded-full opacity-100 uppercase font-semibold text-center px-[28px] my-[20px] w-[334px]"
+      style={buttonStyle}
     >
       {!userId
         ? "Login for sign up"
