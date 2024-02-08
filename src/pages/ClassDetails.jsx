@@ -1,12 +1,12 @@
 import DetailsCard from "../templates/DetailsCard";
-import SignUpButtonFetchMatch from "../components/SignUpButtonFetchMatch";
+import SignUpButtonFetch from "../components/SignUpButtonFetch";
 
 const ClassDetails = () => {
   return (
     <>
       <DetailsCard />
       <div className="px-[20px]">
-        <SignUpButtonFetchMatch />
+        <SignUpButtonFetch />
       </div>
     </>
   );
