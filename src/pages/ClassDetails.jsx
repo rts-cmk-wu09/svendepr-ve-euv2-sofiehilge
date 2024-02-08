@@ -14,4 +14,4 @@ const ClassDetails = () => {
 
 export default ClassDetails;
 
-//I need to pass the weekday from detailsCard to signUpButtonFetchMatch and then compare in the sign up
+

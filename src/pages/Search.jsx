@@ -2,9 +2,6 @@ import TrainerList from "../templates/TrainerList";
 import SearchListFetch from "../templates/SearchListFecth";
 import Navigation from "../templates/Navigation";
 import { useState } from "react";
-import useGetData from "../hooks/useGetData";
-import LoadingComp from "../components/LoadingComp";
-import ErrorComp from "../components/ErrorComp";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");

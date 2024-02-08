@@ -23,12 +23,21 @@ const ActivityListFetch = ({ activities }) => {
   }
 
   const allActivityList = activities || activityList;
+//filter out duplicate activities by className
+const uniqueActivityList = allActivityList.reduce((uniqueList, currentActivity) => {
+  //check if current activity's className is already in uniqueList
+  const isDuplicate = uniqueList.some(activity => activity.className === currentActivity.className);
 
-  // //use the useTextLimit hook outside of the Link component
-  // const limitedText = useTextLimit(item.className, 16);
+  //If its not a duplicate, add it to the uniqueList
+  if(!isDuplicate) {
+    uniqueList.push(currentActivity);
+  }
+  return uniqueList;
+}, []);
+
   return (
     <div style={{display: "flex", width: "375px", overflowX: "auto"}}>
-      {allActivityList.map((item) => (
+      {uniqueActivityList.map((item) => (
         <Link key={item.id} to={`/classdetails/${item.id}`}>
           <article
             className={"relative w-[128px] h-[144.87px] rounded-[16px] mr-[16px]"}

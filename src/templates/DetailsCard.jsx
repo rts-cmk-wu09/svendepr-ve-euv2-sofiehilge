@@ -67,20 +67,25 @@ const DetailsCard = () => {
         <section key={activityDetails.id}>
           <div className="relative">
             <div className="absolute">
-              <Link to="/home" className="absolute top-8 left-8">
-                <IoIosArrowRoundBack className="text-white text-2xl absolute"/>
+              <Link to={"/home"}>
+                <div className="absolute text-white text-xl top-[58px] pl-[21px] font-poppins font-bold">
+                  Back
+                </div>
               </Link>
               <BurgerMenu />
             </div>
-            <div className="relative top-197 left-0 w-375 h-235 bg-gradient-to-b from-white to-gray-700 bg-blend-multiply opacity-100">
+            <div className=" top-197 left-0 w-375 h-235 bg-gradient-to-b from-white to-gray-700 bg-blend-multiply opacity-100">
               <img
                 src={activityDetails.asset.url}
                 alt={activityDetails.className}
                 className="w-[375px] h-[432px] object-cover overflow-hidden"
               />
             </div>
-            <div className="px-[12px]">
-              <h2 className="absolute font-poppins font-bold top-[244px] text-shadow-xs mb-[32px] w-[188px]" style={{ wordWrap: 'break-word' }}>
+            <div className="mx-[20px]">
+              <h2
+                className="absolute font-poppins text-left font-bold top-[244px] leading-none tracking-normal text-shadow-lg mb-[32px] w-[188px]"
+                style={{ wordWrap: "break-word" }}
+              >
                 {activityDetails.className}
               </h2>
               <LikeStarRate />
